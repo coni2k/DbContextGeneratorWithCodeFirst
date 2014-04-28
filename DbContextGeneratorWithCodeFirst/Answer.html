@@ -1,0 +1,20 @@
+<html>
+<body>
+	<p>The content of Answer class: <br />
+namespace DbContextGeneratorWithCodeFirst
+{
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class Answer
+    {
+        public int Id { get; set; }
+        public int QuestionId { get; set; }
+        public string Value { get; set; }
+    
+        public virtual Question Question { get; set; }
+    }
+}
+	</p>
+</body>
+</html>
