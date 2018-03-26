@@ -3,7 +3,7 @@
 <#@ include file="EF6.Utility.CS.ttinclude"#><#@ 
  output extension=".txt" encoding="utf-8"#><#
 
-const string connectionString = @"Server=(LocalDb)\v11.0;Database=QADb;Integrated Security=True;MultipleActiveResultSets=True";
+const string connectionString = @"Server=(LocalDb)\MSSQLLocalDB;Database=QADb;Integrated Security=True";
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
