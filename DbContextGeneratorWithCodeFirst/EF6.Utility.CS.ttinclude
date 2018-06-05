@@ -4,8 +4,8 @@
 <#@ assembly name="System.Xml" #>
 <#@ assembly name="System.Xml.Linq"#>
 <#@ assembly name="EnvDTE"#>
-<#@ assembly name="..\IDE\EntityFramework.dll" #>
-<#@ assembly name="..\IDE\Microsoft.Data.Entity.Design.dll" #>
+<#@ assembly name="$(DevEnvDir)..\IDE\EntityFramework.dll" #>
+<#@ assembly name="$(DevEnvDir)..\IDE\Microsoft.Data.Entity.Design.dll" #>
 <#@ assembly name="System.Data.Entity" #>
 <#@ import namespace="System.Data.Entity" #>
 <#@ import namespace="System.Data.Entity.Infrastructure" #>
@@ -24,7 +24,7 @@
 <#@ import namespace="Microsoft.CSharp"#>
 <#@ import namespace="System.Text"#>
 <#+
-// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
 public static Dictionary<string, string> TemplateMetadata = new Dictionary<string, string>();
 
@@ -1521,7 +1521,7 @@ public class EdmMetadataLoader
                 IList<EdmSchemaError> errors;
                 var itemCollection = EdmItemCollection.Create(new[] { reader }, null, out errors);
 
-				ProcessErrors(errors, sourcePath);
+                ProcessErrors(errors, sourcePath);
 
                 return itemCollection ?? new EdmItemCollection();
             }
